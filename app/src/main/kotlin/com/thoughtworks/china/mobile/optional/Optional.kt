@@ -3,6 +3,7 @@ package com.thoughtworks.china.mobile.optional
 class DeveloperKT(var firstName: String, var lastName: String) {
     var home: String? = null
     lateinit var company: String
+    val fullName: String by lazy { "$lastName $firstName" }
 
     fun setup() {
         company = "ThoughtWorks"
@@ -18,7 +19,7 @@ object Main {
         when {
             dev.home.equals(null) -> dev.home = "New House"
         }
-        println("${dev.lastName} ${dev.firstName}'s home is: ${dev.home}, length: ${dev.home!!.length}")
+        println("${dev.fullName}'s home is: ${dev.home}, length: ${dev.home!!.length}")
         dev.setup()
         println(dev.company)
     }
