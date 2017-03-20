@@ -12,10 +12,24 @@ object SessionFactoryKT {
     }
 }
 
+class BasicFunctionKT {
+
+    fun sum(a: Int, b: Int) = a + b
+
+    fun sum(a: Int?, b: Int?): Int? {
+        requireNotNull(a)
+        requireNotNull(b)
+        return a!! + b!!
+    }
+}
+
 object Main {
     @JvmStatic
     fun main(args: Array<String>) {
         val factory = SessionFactoryKT
         println(factory.provideKotlinSession())
+        val basicFunction = BasicFunctionKT()
+        println("1+1=${basicFunction.sum(1, 1)}")
+        println(basicFunction.sum(null, 1))
     }
 }
