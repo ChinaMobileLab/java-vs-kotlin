@@ -1,4 +1,4 @@
-package com.thoughtworks.china.mobile
+package com.thoughtworks.china.mobile.sealedclass
 
 sealed class Expr
 
