@@ -32,6 +32,11 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile "com.android.support:appcompat-v7:$support_version"
     compile "com.android.support:design:$support_version"
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha5'
     compile 'com.google.guava:guava:20.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.google.code.gson:gson:2.8.0'
+
+    testCompile "junit:junit:4.12"
+    testCompile 'org.mockito:mockito-core:2.7.16'
+    compile 'org.mockito:mockito-core:2.7.16'
 }
