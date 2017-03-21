@@ -15,8 +15,6 @@ object ValVarKT {
         val valvar = ValVarKT
         valvar.phase = "4th"
 
-        println("Welcome to " + mobileOpenDay + " " + valvar.phase)
-        println("Welcome to $mobileOpenDay ${valvar.phase}")
-        println(topics)
+        println("Welcome to $mobileOpenDay ${valvar.phase}\n${valvar.topics}")
     }
 }
