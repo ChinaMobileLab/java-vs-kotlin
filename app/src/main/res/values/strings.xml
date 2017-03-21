@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">java-vs-kotlin</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_async_await">AsyncAwaitActivity</string>
 </resources>
