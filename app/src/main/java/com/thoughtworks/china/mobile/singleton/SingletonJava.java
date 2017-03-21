@@ -1,46 +1,46 @@
 package com.thoughtworks.china.mobile.singleton;
 
-class SingleTonImpl1 {
-    private static final SingleTonImpl1 INSTANCE = new SingleTonImpl1();
+class SingletonImpl1 {
+    private static final SingletonImpl1 INSTANCE = new SingletonImpl1();
 
-    private SingleTonImpl1() {
+    private SingletonImpl1() {
     }
 
-    public SingleTonImpl1 getInstance() {
+    public static SingletonImpl1 getInstance() {
         return INSTANCE;
     }
 }
 
-class SingleTonImpl2 {
-    private volatile static SingleTonImpl2 instance;
+class SingletonImpl2 {
+    private volatile static SingletonImpl2 instance;
 
-    private SingleTonImpl2() {
+    private SingletonImpl2() {
     }
 
-    public SingleTonImpl2 getInstance() {
+    public static SingletonImpl2 getInstance() {
         if (instance == null) {
-            synchronized (SingleTonImpl2.class) {
+            synchronized (SingletonImpl2.class) {
                 if (instance == null)
-                    instance = new SingleTonImpl2();
+                    instance = new SingletonImpl2();
             }
         }
         return instance;
     }
 }
 
-class SingleTonImpl3 {
+class SingletonImpl3 {
     private static class InstanceHolder {
-        static SingleTonImpl3 instance = new SingleTonImpl3();
+        static SingletonImpl3 instance = new SingletonImpl3();
     }
 
-    private SingleTonImpl3() {
+    private SingletonImpl3() {
     }
 
-    public SingleTonImpl3 getInstance() {
+    public static SingletonImpl3 getInstance() {
         return InstanceHolder.instance;
     }
 }
 
-enum SingleTonImpl4 {
+enum SingletonImpl4 {
     INSTANCE;
 }
