@@ -22,7 +22,8 @@ object InlinedFunctionDemo {
     inline fun <reified T> fromJson(json: String): T {
         return Gson().fromJson(json, T::class.java)
     }
-    fun demoReified() = fromJson<String>("test")
+
+    fun demoReified(): String = fromJson("test")
 
     inline var str: String
         get() {
