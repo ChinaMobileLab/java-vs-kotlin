@@ -1,7 +1,6 @@
 package com.thoughtworks.china.mobile.delegateproperty
 
 import android.content.SharedPreferences
-import android.preference.PreferenceManager
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KClass
 import kotlin.reflect.KProperty
@@ -37,9 +36,8 @@ class SharedPreferenceDelegate<T: Number>(val sharedPreferences: SharedPreferenc
         }.commit()
     }
 }
-/**
-class Demo {
-    var age: Int by sharedPreferenceDelegate(PreferenceManager.getDefaultSharedPreferences(context), "age")
-    var height: Float by sharedPreferenceDelegate(PreferenceManager.getDefaultSharedPreferences(context), "height")
+
+class Person(sp: SharedPreferences) {
+    var age: Int by sharedPreferenceDelegate(sp, "age")
+    var height: Float by sharedPreferenceDelegate(sp, "height")
 }
-**/
