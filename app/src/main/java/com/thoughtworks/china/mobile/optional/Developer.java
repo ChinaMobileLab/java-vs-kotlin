@@ -21,5 +21,12 @@ public class Developer {
             dev.home = Optional.of("New House");
         }
         System.out.println(dev.lastName + " " + dev.firstName + "\'s home is: " + dev.home.get());
+
+        User user = new User("Zhang Shuai", null);
+        if (user.getCompany() != null
+                && user.getCompany().getAddress() != null
+                && user.getCompany().getAddress().getPostcode() != null) {
+            System.out.println("Postcode: " + user.getCompany().getAddress().getPostcode());
+        }
     }
 }

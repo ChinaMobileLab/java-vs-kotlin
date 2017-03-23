@@ -1,5 +1,9 @@
 package com.thoughtworks.china.mobile.optional
 
+data class Address(var street: String, var postcode: String?)
+data class Company(var name: String, var address: Address?)
+data class User(var name: String, var company: Company?)
+
 class DeveloperKT(var firstName: String, var lastName: String) {
     var home: String? = null
     lateinit var company: String
@@ -22,6 +26,10 @@ object Main {
         println("${dev.fullName}'s home is: ${dev.home}, length: ${dev.home!!.length}")
         dev.setup()
         println(dev.company)
+
+        val user = User("Zhang Shuai", null)
+        println(user.company?.address?.postcode)
+
     }
 
 }
