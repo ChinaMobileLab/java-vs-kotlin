@@ -12,11 +12,20 @@ object InlinedFunctionDemo {
         lock.unlock()
         return result
     }
+
     fun demoInline(): String {
         val lock = ReentrantLock()
         lock(lock) {
             return "test"
         }
+    }
+
+    fun demoInline1(): String {
+        val lock = ReentrantLock()
+        lock.lock()
+        val result = "test"
+        lock.unlock()
+        return result
     }
 
     inline fun <reified T> fromJson(json: String): T {

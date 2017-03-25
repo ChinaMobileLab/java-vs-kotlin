@@ -1,6 +1,5 @@
 package com.thoughtworks.china.mobile.viewholder;
 
-import android.content.res.ObbInfo;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
@@ -11,7 +10,7 @@ import android.widget.TextView;
 
 import com.thoughtworks.china.mobile.R;
 
-public class ViewHolderJava extends RecyclerView.ViewHolder{
+class ViewHolderJava extends RecyclerView.ViewHolder {
 
     private ImageView image;
     private TextView textView;
