@@ -1,31 +1,39 @@
 package com.thoughtworks.china.mobile.inlinefunction
 
 import com.google.gson.Gson
-import java.util.concurrent.locks.Lock
-import java.util.concurrent.locks.ReentrantLock
 
 object InlinedFunctionDemo {
 
-    inline fun <T> lock(lock: Lock, body: () -> T): T {
-        lock.lock()
-        val result = body()
-        lock.unlock()
-        return result
-    }
-
-    fun demoInline(): String {
-        val lock = ReentrantLock()
-        lock(lock) {
-            return "test"
+    fun addAccount(username: String, password: String): String {
+        val token = measureTime("login") {
+            login(username, password)
+        }
+        return measureTime("fetch user detail") {
+            fetchUserDetail(token)
         }
     }
 
-    fun demoInline1(): String {
-        val lock = ReentrantLock()
-        lock.lock()
-        val result = "test"
-        lock.unlock()
+
+    fun <T> measureTime(msg: String, body: () -> T): T {
+        val start = System.currentTimeMillis()
+        val result = body()
+        println("$msg ${System.currentTimeMillis() - start}ms")
         return result
+    }
+
+    @JvmStatic
+    fun main(args: Array<String>) {
+        addAccount("", "")
+    }
+
+    private fun login(username: String, password: String): String {
+        Thread.sleep(100)
+        return "a290bGluCg=="
+    }
+
+    private fun fetchUserDetail(token: String): String {
+        Thread.sleep(200)
+        return "user info"
     }
 
     inline fun <reified T> fromJson(json: String): T {

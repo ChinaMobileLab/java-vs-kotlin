@@ -14,5 +14,3 @@ class ViewHolderKotlin(itemView: View)
         itemView.button.setOnClickListener { }
     }
 }
-
-
